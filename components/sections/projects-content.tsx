@@ -1,0 +1,115 @@
+"use client"
+
+import { motion } from "framer-motion"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { ExternalLink } from "lucide-react"
+import Image from "next/image"
+import { link } from "fs"
+
+const projects = [
+    {
+        title: "eHomemart",
+        description: "eHomemart is an online store specializing in home décor, interior accents, and event/party décor — covering a broad range of products from lighting, curtains, wall décor, candles, artificial flowers/greenery, vases & planters, tableware, linens, and more.",
+        tech: ["Shopify", "Liquid", "React", "TailwindCSS", "SCSS", "Javascript", "Figma", "SEO", "Git"],
+        image: "/projects/Ehomemart.png",
+        link: "https://ehomemart.com/",
+    },
+    {
+        title: "Liquidboosts",
+        description: "Liquidboosts is an online service offering “boosting” for video games — especially helping players complete difficult challenges, reach higher ranks, or unlock rare in-game items (such as weapon camos) without needing to grind for hours.",
+        tech: ["React", "Next.js", "Typescript", "tRPC", "Stripe", "ShadCn UI", "Git", "Vercel"],
+        image: "/projects/liquidboosts.png",
+        link: "https://liquidboosts.com/",
+    },
+    {
+        title: "CBHN Dashboard",
+        description: "A comprehensive dashboard for managing provider and practitioner data, appointments, and reporting for a healthcare network.",
+        tech: ["React", "Next.js", "Typescript", "TailwindCSS", "REST API", "React Query", "Git", "Vercel"],
+        image: "/projects/cbhn.png",
+        link: "https://directory.cassyork.com/",
+    },
+    {
+        title: "City Burger",
+        description: "City Burger — online presence & menu portal: The site serves as the online homepage for City Burger, presenting its “about us” story, locations, menu offerings and hours across its branches.",
+        tech: ["Wordpress", "Elementor", "CSS", "PHP", "Linode"],
+        image: "/projects/city-burger.png",
+        link: "https://city-burger.tecplus.us/",
+    },
+    {
+        title: "Process Bucket",
+        description: "ProcessBucket is a web-based tool and platform designed to help businesses map, document, and improve their internal processes and workflows.",
+        tech: ["Vue.js", "VueX", "Typescript", "Postgres", "NestJS", "GCP", "Gitlab", "Git"],
+        image: "/projects/processbucket.png",
+        link: "https://processbucket.com/",
+    },
+    {
+        title: "Portfolio Website",
+        description: "My personal portfolio website showcasing my skills, projects, and experience as a web developer.",
+        tech: ["React", "Next.js", "Typescript", "TailwindCSS", "Framer Motion", "Vercel", "Git"],
+        image: "/projects/portfolio.png",
+        link: "https://jaysontolentino.vercel.com/",
+    },
+]
+
+export default function ProjectsContent() {
+    return (
+        <div className="max-w-5xl mx-auto px-4 py-12 md:py-24">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+            >
+                <h1 className="mb-8 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+                    Projects
+                </h1>
+                <p className="mb-12 max-w-2xl text-lg text-muted-foreground">
+                    Here are some of the projects I've worked on. Each one presented unique
+                    challenges and learning opportunities.
+                </p>
+            </motion.div>
+
+            <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+                {projects.map((project, index) => (
+                    <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                        <Card className="border-neutral-200 dark:border-neutral-700 flex h-full flex-col overflow-hidden transition-all hover:shadow-lg">
+                            <div className="w-full h-64 relative mb-4" >
+                                <Image src={project.image} fill alt={project.title} className="object-cover" />
+                            </div>
+                            <CardHeader>
+                                <CardTitle className="mb-4">{project.title}</CardTitle>
+                                <CardDescription className="">
+                                    {project.description}
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent className="flex-1">
+                                <div className="flex flex-wrap gap-2">
+                                    {project.tech.map((tech) => (
+                                        <span
+                                            key={tech}
+                                            className="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground"
+                                        >
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                            </CardContent>
+                            <CardFooter>
+                                <Button className="w-full" asChild>
+                                    <a href={project.link} target="_blank" rel="noreferrer">
+                                        View Project <ExternalLink className="ml-2 h-4 w-4" />
+                                    </a>
+                                </Button>
+                            </CardFooter>
+                        </Card>
+                    </motion.div>
+                ))}
+            </div>
+        </div>
+    )
+}
