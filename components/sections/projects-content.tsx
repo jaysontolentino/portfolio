@@ -48,7 +48,7 @@ const projects = [
         description: "My personal portfolio website showcasing my skills, projects, and experience as a web developer.",
         tech: ["React", "Next.js", "Typescript", "TailwindCSS", "Framer Motion", "Vercel", "Git"],
         image: "/projects/portfolio.png",
-        link: "https://jaysontolentino.vercel.com/",
+        link: "https://jaysontolentino.vercel.app/",
     },
 ]
 
