@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Github, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { Badge } from "../ui/badge"
 
 export function Hero() {
     return (
@@ -31,8 +32,24 @@ export function Hero() {
                     className="max-w-2xl text-lg text-muted-foreground sm:text-xl text-center md:text-left"
                 >
                     Hi, I'm Jayson — a web developer with over 8 years of experience.
-I build modern, fast, responsive and user-friendly websites. I focus on clean code, smooth interactions, and thoughtful design to create digital experiences that feel intuitive and polished.
+                    I build modern, fast, responsive and user-friendly websites. I focus on clean code, smooth interactions, and thoughtful design to create digital experiences that feel intuitive and polished.
                 </motion.p>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="flex flex-wrap gap-4 justify-center md:justify-start items-center"
+                >
+                    {["Typescript", "React", "Tailwind CSS", "Node.js", "SQL", "PHP", "HTML"].map((tech) => (
+                        <Badge
+                            variant="outline"
+                            key={tech}
+                        >
+                            {tech}
+                        </Badge>
+                    ))}
+                </motion.div>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
