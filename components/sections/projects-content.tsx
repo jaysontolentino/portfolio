@@ -11,7 +11,7 @@ const projects = [
     {
         title: "eHomemart",
         description: "eHomemart is an online store specializing in home décor, interior accents, and event/party décor — covering a broad range of products from lighting, curtains, wall décor, candles, artificial flowers/greenery, vases & planters, tableware, linens, and more.",
-        tech: ["Shopify", "Liquid", "React", "TailwindCSS", "SCSS", "Javascript", "Figma", "SEO", "Git"],
+        tech: ["Shopify", "Liquid", "React", "TailwindCSS", "SCSS", "Javascript", "Typescript", "jQuery", "Figma", "SEO", "Git"],
         image: "/projects/Ehomemart.png",
         link: "https://ehomemart.com/",
         tasks: [
@@ -28,7 +28,7 @@ const projects = [
     {
         title: "Liquidboosts",
         description: "Liquidboosts is an online service offering “boosting” for video games — especially helping players complete difficult challenges, reach higher ranks, or unlock rare in-game items (such as weapon camos) without needing to grind for hours.",
-        tech: ["React", "Next.js", "Typescript", "tRPC", "Stripe", "ShadCn UI", "Git", "Vercel"],
+        tech: ["React", "Next.js", "Typescript", "tRPC", "Stripe", "ShadCn UI", "Git", "Vercel", "TailwindCSS", "Figma"],
         image: "/projects/liquidboosts.png",
         link: "https://liquidboosts.com/cod",
         tasks: [
