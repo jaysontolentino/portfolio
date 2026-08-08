@@ -19,10 +19,11 @@ export function Navbar() {
     const [isOpen, setIsOpen] = React.useState(false)
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-gray-700  bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
+        <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
             <div className="max-w-5xl mx-auto flex h-16 items-center justify-between px-4">
-                <Link href="/" className="flex items-center space-x-2">
-                    <span className="text-xl font-bold">Jayson Tolentino</span>
+                <Link href="/" className="flex items-center gap-1.5 font-display">
+                    <span className="font-mono text-signal-cyan">~/</span>
+                    <span className="text-lg font-bold">Jayson Tolentino</span>
                 </Link>
 
                 {/* Desktop Nav */}
@@ -60,7 +61,7 @@ export function Navbar() {
 
             {/* Mobile Nav Menu */}
             {isOpen && (
-                <div className="md:hidden border-t">
+                <div className="md:hidden border-t border-border">
                     <div className="container mx-auto flex flex-col space-y-4 p-4">
                         {navItems.map((item) => (
                             <Link

@@ -39,11 +39,12 @@ export default function ContactContent() {
                 transition={{ duration: 0.5 }}
                 className="mb-12"
             >
-                <h1 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+                <p className="font-mono text-xs text-muted-foreground">{"// contact.send()"}</p>
+                <h1 className="mb-4 mt-2 font-display text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
                     Get in Touch
                 </h1>
                 <p className="max-w-2xl text-lg text-muted-foreground">
-                    Have a project in mind or just want to say hi? I'd love to hear from
+                    Have a project in mind or just want to say hi? I&apos;d love to hear from
                     you.
                 </p>
             </motion.div>
@@ -54,9 +55,9 @@ export default function ContactContent() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                    <Card className="border-neutral-200 dark:border-neutral-700">
+                    <Card>
                         <CardHeader>
-                            <CardTitle>Contact Information</CardTitle>
+                            <CardTitle className="font-display">Contact Information</CardTitle>
                             <CardDescription>
                                 Feel free to reach out through any of these channels.
                             </CardDescription>
@@ -85,11 +86,11 @@ export default function ContactContent() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                    <Card className="border-neutral-200 dark:border-neutral-700">
+                    <Card>
                         <CardHeader>
-                            <CardTitle>Send a Message</CardTitle>
+                            <CardTitle className="font-display">Send a Message</CardTitle>
                             <CardDescription>
-                                I'll get back to you as soon as possible.
+                                I&apos;ll get back to you as soon as possible.
                             </CardDescription>
                         </CardHeader>
                         <CardContent>
@@ -141,10 +142,10 @@ export default function ContactContent() {
 const Alert = ({ type, message }: { type: "error" | "success"; message: string }) => {
     return (
         <div
-            className={`mt-4 rounded-md p-4 ${
+            className={`mt-4 rounded-md border p-4 text-sm ${
                 type === "success"
-                    ? "bg-green-50 text-green-800"
-                    : "bg-red-50 text-red-800"
+                    ? "border-signal-cyan/30 bg-signal-cyan/10 text-signal-cyan"
+                    : "border-destructive/30 bg-destructive/10 text-destructive"
             }`}
         >
             {message}
