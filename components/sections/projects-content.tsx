@@ -11,7 +11,7 @@ const projects = [
     {
         title: "eHomemart",
         description: "eHomemart is an online store specializing in home décor, interior accents, and event/party décor — covering a broad range of products from lighting, curtains, wall décor, candles, artificial flowers/greenery, vases & planters, tableware, linens, and more.",
-        tech: ["Shopify", "Liquid", "React", "TailwindCSS", "SCSS", "Javascript", "Figma", "SEO", "Git"],
+        tech: ["Shopify", "Liquid", "React", "TailwindCSS", "SCSS", "Javascript", "Typescript", "jQuery", "Figma", "SEO", "Git"],
         image: "/projects/Ehomemart.png",
         link: "https://ehomemart.com/",
         tasks: [
@@ -28,7 +28,7 @@ const projects = [
     {
         title: "Liquidboosts",
         description: "Liquidboosts is an online service offering “boosting” for video games — especially helping players complete difficult challenges, reach higher ranks, or unlock rare in-game items (such as weapon camos) without needing to grind for hours.",
-        tech: ["React", "Next.js", "Typescript", "tRPC", "Stripe", "ShadCn UI", "Git", "Vercel"],
+        tech: ["React", "Next.js", "Typescript", "tRPC", "Stripe", "ShadCn UI", "Git", "Vercel", "TailwindCSS", "Figma"],
         image: "/projects/liquidboosts.png",
         link: "https://liquidboosts.com/cod",
         tasks: [
@@ -100,11 +100,12 @@ export default function ProjectsContent() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <h1 className="mb-8 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+                <p className="font-mono text-xs text-muted-foreground">{"// ls ./projects"}</p>
+                <h1 className="mb-4 mt-2 font-display text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
                     Projects
                 </h1>
                 <p className="mb-12 max-w-2xl text-lg text-muted-foreground">
-                    Here are some of the projects I've worked on. Each one presented unique
+                    Here are some of the projects I&apos;ve worked on. Each one presented unique
                     challenges and learning opportunities.
                 </p>
             </motion.div>
@@ -117,12 +118,17 @@ export default function ProjectsContent() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                     >
-                        <Card className="border-neutral-200 dark:border-neutral-700 flex h-full flex-col overflow-hidden transition-all hover:shadow-lg">
-                            {/* <div className="w-full h-64 relative mb-4" >
-                                <Image src={project.image} fill alt={project.title} className="object-cover" />
-                            </div> */}
+                        <Card className="flex h-full flex-col overflow-hidden transition-all hover:shadow-lg hover:border-signal-cyan/40">
+                            <div className="flex items-center gap-1.5 border-b border-border px-4 py-2.5">
+                                <span className="terminal-dot bg-destructive/70" />
+                                <span className="terminal-dot bg-signal-amber/70" />
+                                <span className="terminal-dot bg-signal-cyan/70" />
+                                <span className="ml-2 font-mono text-[11px] text-muted-foreground">
+                                    {project.title.toLowerCase().replace(/\s+/g, "-")}
+                                </span>
+                            </div>
                             <CardHeader>
-                                <CardTitle className="mb-4">{project.title}</CardTitle>
+                                <CardTitle className="mb-4 font-display">{project.title}</CardTitle>
                                 <CardDescription className="">
                                     {project.description}
                                 </CardDescription>
@@ -132,10 +138,11 @@ export default function ProjectsContent() {
                             <CardContent className="flex-1 space-y-10">
                                 <Separator />
                                 <div>
-                                    <h2 className="text-xl font-semibold mb-4">Tasks and Responsibilities</h2>
-                                    <ul className="list-disc list-inside">
+                                    <h2 className="mb-4 font-display text-xl font-semibold">Tasks and Responsibilities</h2>
+                                    <ul className="space-y-2">
                                         {project.tasks.map((task) => (
-                                            <li key={task} className="mb-2 text-sm">
+                                            <li key={task} className="flex gap-2 text-sm">
+                                                <span className="font-mono text-signal-amber">+</span>
                                                 {task}
                                             </li>
                                         ))}
@@ -143,11 +150,11 @@ export default function ProjectsContent() {
                                 </div>
                                 <Separator />
                                 <div>
-                                    <h2 className="text-xl font-semibold mb-4">Technologies Used</h2>
-                                    <div className="flex flex-wrap gap-2">
+                                    <h2 className="mb-4 font-display text-xl font-semibold">Technologies Used</h2>
+                                    <div className="flex flex-wrap gap-2 font-mono text-xs">
                                         {project.tech.map((tech) => (
                                             <Badge
-                                                variant="secondary"
+                                                variant="outline"
                                                 key={tech}
                                             >
                                                 {tech}
