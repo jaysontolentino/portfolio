@@ -32,7 +32,7 @@ export default function ContactContent() {
     }
 
     return (
-        <div className="max-w-5xl mx-auto px-4 py-12 md:py-24">
+        <div className="max-w-3xl mx-auto px-4 py-12 md:py-24">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -49,37 +49,7 @@ export default function ContactContent() {
                 </p>
             </motion.div>
 
-            <div className="grid gap-8 md:grid-cols-2">
-                <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                >
-                    <Card>
-                        <CardHeader>
-                            <CardTitle className="font-display">Contact Information</CardTitle>
-                            <CardDescription>
-                                Feel free to reach out through any of these channels.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
-                            <div className="flex items-center space-x-3 text-muted-foreground">
-                                <Mail className="h-5 w-5" />
-                                <a href={`mailto:${contactData.email}`} className="hover:text-primary">
-                                    {contactData.email}
-                                </a>
-                            </div>
-                            <div className="flex items-center space-x-3 text-muted-foreground">
-                                <Phone className="h-5 w-5" />
-                                <span>{contactData.phone}</span>
-                            </div>
-                            <div className="flex items-center space-x-3 text-muted-foreground">
-                                <MapPin className="h-5 w-5" />
-                                <span>{contactData.location}</span>
-                            </div>
-                        </CardContent>
-                    </Card>
-                </motion.div>
+            <div className="max-w-3xl mx-auto">
 
                 <motion.div
                     initial={{ opacity: 0, x: 20 }}

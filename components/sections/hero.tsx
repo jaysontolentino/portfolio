@@ -19,12 +19,12 @@ const stack = [
 
 export function Hero() {
     return (
-      <section className="relative overflow-hidden">
+      <section className="relative min-h-[calc(100dvh-4rem)] flex items-center overflow-hidden">
         <div className="grain-canvas pointer-events-none absolute inset-0" />
         <ParticlesBackground className="pointer-events-none absolute inset-0" />
         <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-transparent via-transparent to-background" />
 
-        <div className="relative max-w-5xl mx-auto flex min-h-full flex-col-reverse md:flex-row md:items-center justify-end md:justify-center gap-10 px-4 py-16 md:py-28">
+        <div className="relative w-full max-w-5xl mx-auto flex flex-col-reverse md:flex-row md:items-center justify-end md:justify-center gap-10 px-4 py-16 md:py-28">
           <div className="w-full md:w-3/5 flex flex-col space-y-7">
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -50,13 +50,8 @@ export function Hero() {
                 Jayson Tolentino
               </h1>
               <h2 className="mt-3 font-display text-xl font-medium sm:text-xl md:text-2xl">
-                <span className="text-signal-amber">Front</span>
-                <span className="text-muted-foreground">-to-</span>
-                <span className="text-signal-cyan">back</span>
-                <span className="text-muted-foreground">
-                  {" "}
-                  Software Engineer
-                </span>
+                <span className="text-signal-amber">Full-Stack</span>
+                <span className="text-muted-foreground"> Engineer</span>
               </h2>
             </motion.div>
 
@@ -66,14 +61,9 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg text-center md:text-left"
             >
-              I&apos;m Jayson, a software engineer with 8+ years of experience
-              building products end-to-end, from pixel-precise React and Next.js
-              interfaces to the back end systems that power them. I care equally
-              about what people click and what keeps it running: clean component
-              architecture on the front end, well-modeled APIs and data on the
-              back end, and the integrations that connect the two. Beyond
-              shipping features, I follow consistent coding standards, clean
-              architecture, and proven design patterns.
+              Full-stack developer who builds and maintains
+              products from start to finish, with a focus on clean architecture
+              and consistent, standards-driven code.
             </motion.p>
 
             <motion.div
